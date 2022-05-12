@@ -1,6 +1,18 @@
 import "./App.css";
 
+//Cấu hình router
+
+import { BrowserRouter, Switch } from "react-router-dom";
+import HomeTemplate from "./templates/HomeTemplate/HomeTemplate";
+import Home from "./pages/Home/Home";
+
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <BrowserRouter>
+      <Switch>
+        <HomeTemplate exact path="/" Component={Home} />
+      </Switch>
+    </BrowserRouter>
+  );
 }
 export default App;
