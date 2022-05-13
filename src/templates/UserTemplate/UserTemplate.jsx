@@ -1,9 +1,8 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import FooterHome from "./FooterHome/FooterHome";
-import HeaderHome from "./HeaderTemplate/HeaderHome/HeaderHome";
+import HeaderHome from "../HomeTemplate/HeaderTemplate/HeaderHome/HeaderHome";
 
-export default function HomeTemplate(props) {
+export default function UserTemplate(props) {
   let { Component, path } = props;
 
   return (
@@ -13,9 +12,7 @@ export default function HomeTemplate(props) {
       render={(propsRoute) => {
         return (
           <div>
-            <HeaderHome {...propsRoute} />
             <Component {...propsRoute} />
-            <FooterHome />
           </div>
         );
       }}
