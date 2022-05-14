@@ -8,12 +8,45 @@ export default function Cinema(props) {
     tabPosition: "left",
   });
   const { TabPane } = Tabs;
-
   const { tabPosition } = state;
+  const { maHeThongRap, arrCinema } = props;
+
+  const renderCinema = () => {
+    return arrCinema.map((cinema, index) => (
+      <TabPane
+        tab={
+          <NavLink to="#" className={"text-left"}>
+            <h3 className="mb-0 text-[14px]">{cinema.tenCumRap}</h3>
+            <p className="text-[12px] mb-0">{cinema.diaChi}</p>
+            <span className="text-[12px]">Chi tiết</span>
+          </NavLink>
+        }
+        key={index+1}
+        className="p-5"
+      >
+        <ul>
+          <li>
+            <MovieSchedule />
+          </li>
+          <li>
+            <MovieSchedule />
+          </li>
+          <li>
+            <MovieSchedule />
+          </li>
+          <li>
+            <MovieSchedule />
+          </li>
+        </ul>
+      </TabPane>
+    ));
+  };
+
   return (
     <div id="cinemas">
       <Tabs tabPosition={tabPosition}>
-        <TabPane
+        {renderCinema()}
+        {/* <TabPane
           tab={
             <NavLink to="#" className={"text-left"}>
               <h3 className="mb-0">BHD STAR CINEPLEX - PHẠM HÙNG</h3>
@@ -40,7 +73,7 @@ export default function Cinema(props) {
               <MovieSchedule />
             </li>
           </ul>
-        </TabPane>
+        </TabPane> */}
       </Tabs>
     </div>
   );

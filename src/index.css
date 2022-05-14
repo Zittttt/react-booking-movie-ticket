@@ -15,15 +15,52 @@ span {
   background-color: #7c3aed !important;
 }
 
-#rc-tabs-0-panel-1,
-#rc-tabs-2-panel-1,
-#rc-tabs-3-panel-1,
-#rc-tabs-4-panel-1,
-#rc-tabs-5-panel-1,
-#rc-tabs-6-panel-1 {
-  padding: 0 !important;
-}
-
 a {
   color: white !important;
+}
+
+.content .dark {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background: linear-gradient(to top, #000, transparent 100%);
+  border-radius: 4px;
+}
+
+.movieImg *,
+.content .description * {
+  transition: all 0.5s;
+}
+
+.content .playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content:hover .playButton img:hover {
+  opacity: 0.7;
+}
+
+.buyTicket {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  text-align: center;
+  opacity: 0;
+}
+
+.content:hover .description * {
+  opacity: 0;
+}
+
+.content:hover .playButton,
+.content:hover .dark,
+.content:hover .buyTicket {
+  opacity: 1;
 }

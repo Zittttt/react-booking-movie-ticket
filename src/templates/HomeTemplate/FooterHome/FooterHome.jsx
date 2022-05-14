@@ -4,7 +4,7 @@ import logo from "../../../assets/img/logo.png";
 
 export default function FooterHome() {
   return (
-    <footer className="bg-[#141B21] w-full">
+    <footer className="bg-[#141B21] w-full mt-10">
       <div className=" text-white flex justify-evenly container mx-auto py-16">
         <div>
           <img src={logo} alt="..." width={200} className="logo mb-10" />

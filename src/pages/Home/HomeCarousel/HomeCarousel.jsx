@@ -3,26 +3,19 @@ import { Carousel } from "antd";
 
 const contentStyle = {
   height: "800px",
+  width: "100%",
 };
 
-export default function HomeCarousel() {
-  const img = (
-    <img src="https://picsum.photos/2000/800" className="h-full w-full" />
-  );
+export default function HomeCarousel(props) {
+  const { arrBanner } = props;
+
   return (
     <Carousel autoplay>
-      <div>
-        <h3 style={contentStyle}>{img}</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>{img}</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>{img}</h3>
-      </div>
-      <div>
-        <h3 style={contentStyle}>{img}</h3>
-      </div>
+      {arrBanner.map((banner, index) => (
+        <div key={index}>
+          <img src={banner.hinhAnh} style={contentStyle} />
+        </div>
+      ))}
     </Carousel>
   );
 }
